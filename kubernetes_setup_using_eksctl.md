@@ -47,17 +47,17 @@ You can follow same procedure in the official  AWS document [Getting started wit
    Another EX
 ```sh
 eksctl create cluster
---name eks-cluster-demo
---version 1.15
---region us-west-1
---nodegroup-name eks-worker-nodes
---node-type t3.medium
---nodes 2
---nodes-min 2
---nodes-max 4
---ssh-access
---ssh-public-key selvakey.pub
---managed
+--name eks-cluster-demo \
+--version 1.15 \
+--region us-west-1 \
+--nodegroup-name eks-worker-nodes \
+--node-type t3.medium \
+--nodes 2 \
+--nodes-min 2 \
+--nodes-max 4 \
+--ssh-access \
+--ssh-public-key selvakey.pub \ # optional
+--managed \
    
    example:
    eksctl create cluster --name valaxy-cluster \
