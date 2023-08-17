@@ -43,8 +43,9 @@ You can follow same procedure in the official  AWS document [Getting started wit
    --nodes-min 2 \
    --nodes-max 2 \ 
    --zones <AZ-1>,<AZ-2>
-
+  ```
    Another EX
+```sh
 eksctl create cluster
 --name eks-cluster-demo
 --version 1.15
