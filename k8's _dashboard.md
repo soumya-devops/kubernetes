@@ -66,3 +66,9 @@ Save this YAML to a file, e.g., dashboard-adminuser.yaml, and apply it:
 ```
  kubectl apply -f dashboard-adminuser.yaml
  ```
+Commands to check service account and secrets
+```
+kubectl get serviceaccount -n kubernetes-dashboard
+kubectl describe serviceaccount admin-user -n kubernetes-dashboard
+kubectl describe secret admin-token-secret -n kubernetes-dashboard --> get token here
+```
