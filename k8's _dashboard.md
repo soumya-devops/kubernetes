@@ -39,9 +39,10 @@ a. Kubeconfig
 
 b. Token  
 Let me use token method, that is the recommended login method. For that we need to create cluster admin service account.  
-  1. **Create a Service Account:**
-     Kubernetes Dashboard uses a Service Account for authentication. You can create one with the following YAML manifest:
+  1. **Create a Service Account:**  
+     Kubernetes Dashboard uses a Service Account for authentication. You can create one with the following YAML manifest:  
      As k8s 1.24 version didn't create secret automatically for service-account , need to reate it manually.
+     
      ```
      apiVersion: v1
 kind: ServiceAccount
@@ -59,8 +60,9 @@ metadata:
   namespace: kubernetes-dashboard
   annotations:
     kubernetes.io/service-account.name: "admin-user"
-  ```
+  ```  
 Save this YAML to a file, e.g., dashboard-adminuser.yaml, and apply it:
+
 ```
  kubectl apply -f dashboard-adminuser.yaml
  ```
