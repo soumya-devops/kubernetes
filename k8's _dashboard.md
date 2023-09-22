@@ -35,6 +35,6 @@ You can access your dashboard from any browser using the ELB address you have go
 3. **How to get Login Credentials to access Kubernetes Dashboard?**
 There are two ways you can login into the dashboard.
 
-1. Kubeconfig
+a. Kubeconfig
 
-2. Token
+b. Token
