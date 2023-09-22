@@ -13,5 +13,15 @@ kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.7.0/a
 
 2. **How to Access Kubernetes Dashboard?**
 when you want to access your kubernetes dashboard from outside the cluster then we must expose the service using LoadBalancer or NodePort type. Since default service type is Cluster IP.
+In below image you can see service type is Cluster IP
 
-![image](https://github.com/soumya-devops/kubernetes/assets/37827483/cde7fa83-d36b-4022-96b2-78bfbb98280a)
+'''
+kubectl get svc -n kubernetes-dashboard
+'''
+
+![image](https://github.com/soumya-devops/kubernetes/assets/37827483/cde7fa83-d36b-4022-96b2-78bfbb98280a)  
+
+Find the service type and change from ClusterIP to LoadBalancer, save and exit from the file.  
+'''
+kubectl -n kubernetes-dashboard edit svc kubernetes-dashboard
+''''
