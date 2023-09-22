@@ -72,3 +72,20 @@ kubectl get serviceaccount -n kubernetes-dashboard
 kubectl describe serviceaccount admin-user -n kubernetes-dashboard
 kubectl describe secret admin-token-secret -n kubernetes-dashboard --> get token here
 ```
+
+2. **Create a Cluster Role Binding:**
+To grant the necessary permissions to the Service Account, you can create a Cluster Role Binding. Save the following YAML to a file, e.g., dashboard-clusterrolebinding.yaml, and apply it:
+```
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRoleBinding
+metadata:
+  name: admin-user-binding
+subjects:
+- kind: ServiceAccount
+  name: admin-user
+  namespace: kubernetes-dashboard
+roleRef:
+  kind: ClusterRole
+  name: cluster-admin
+  apiGroup: rbac.authorization.k8s.io
+```
