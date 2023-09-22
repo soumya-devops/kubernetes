@@ -93,7 +93,7 @@ Apply it using:
 ```
 kubectl apply -f dashboard-clusterrolebinding.yaml
 ```
-3. **Get the Bearer Token:**
+3. **Get the Bearer Token:**  
 To get the token for the admin-user Service Account, you can use the following command:
 ```
 kubectl -n kubernetes-dashboard describe secret $(kubectl -n kubernetes-dashboard get secret | grep admin-user | awk '{print $1}')
