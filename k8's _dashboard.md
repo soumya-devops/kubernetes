@@ -3,8 +3,8 @@ https://www.learnitguide.net/2020/10/install-kubernetes-dashboard-deploy.html
 
 **Steps to install Dashboard in k8's and access to by token**
 
-1. **Install Kubernetes Dashboard**
-a. Kubernetes stored their recommended yaml files for Dashboard in github repository. Use kubectl command to deploy the kubernetes dashboard as below.
+1. **Install Kubernetes Dashboard**  
+a. Kubernetes stored their recommended yaml files for Dashboard in github repository. Use kubectl command to deploy the kubernetes dashboard as below.  
 b. from here will get latest yaml file https://kubernetes.io/docs/tasks/access-application-cluster/web-ui-dashboard/
 Ex of install dashboard by yaml file
 ```
