@@ -32,9 +32,35 @@ Get the ELB address from the output.  (Access it with **https://**)
 ![image](https://github.com/soumya-devops/kubernetes/assets/37827483/761cd491-07ee-46e3-8820-248e51463d84)  
 You can access your dashboard from any browser using the ELB address you have got.
 
-3. **How to get Login Credentials to access Kubernetes Dashboard?**
+3. **How to get Login Credentials to access Kubernetes Dashboard?**  
 There are two ways you can login into the dashboard.
 
 a. Kubeconfig
 
-b. Token
+b. Token  
+Let me use token method, that is the recommended login method. For that we need to create cluster admin service account.  
+  1. **Create a Service Account:**
+     Kubernetes Dashboard uses a Service Account for authentication. You can create one with the following YAML manifest:
+     As k8s 1.24 version didn't create secret automatically for service-account , need to reate it manually.
+     ```
+     apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: admin-user
+  namespace: kubernetes-dashboard
+secrets:
+  - name: admin-token-secret
+---
+apiVersion: v1
+kind: Secret
+type: kubernetes.io/service-account-token
+metadata:
+  name: admin-token-secret
+  namespace: kubernetes-dashboard
+  annotations:
+    kubernetes.io/service-account.name: "admin-user"
+  ```
+Save this YAML to a file, e.g., dashboard-adminuser.yaml, and apply it:
+```
+ kubectl apply -f dashboard-adminuser.yaml
+ ```
