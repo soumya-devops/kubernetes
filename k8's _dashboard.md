@@ -24,3 +24,9 @@ kubectl get svc -n kubernetes-dashboard
 ```
 kubectl -n kubernetes-dashboard edit svc kubernetes-dashboard
 ```
+Make sure the service type changed to LoadBalancer.  
+```
+kubectl -n kubernetes-dashboard get svc
+```
+Get the ELB address from the output.  (Access it with https://)  
+![image](https://github.com/soumya-devops/kubernetes/assets/37827483/761cd491-07ee-46e3-8820-248e51463d84)
