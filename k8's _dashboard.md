@@ -28,5 +28,13 @@ Make sure the service type changed to LoadBalancer.
 ```
 kubectl -n kubernetes-dashboard get svc
 ```
-Get the ELB address from the output.  (Access it with https://)  
-![image](https://github.com/soumya-devops/kubernetes/assets/37827483/761cd491-07ee-46e3-8820-248e51463d84)
+Get the ELB address from the output.  (Access it with **https://**)  
+![image](https://github.com/soumya-devops/kubernetes/assets/37827483/761cd491-07ee-46e3-8820-248e51463d84)  
+You can access your dashboard from any browser using the ELB address you have got.
+
+3. **How to get Login Credentials to access Kubernetes Dashboard?**
+There are two ways you can login into the dashboard.
+
+1. Kubeconfig
+
+2. Token
